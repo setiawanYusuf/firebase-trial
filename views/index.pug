@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p #{title}
+  label Login to firebase: 
+  button#signInGoogle(onclick= "signInWithGoogle()") Sign in With Google Email
+
+  h3#google-display-name
+  img#google-pic
+  p#google-email
+
+  button#sign-out-google(onclick= "signOutWithGoogle()" style="display: none;") Sign out From Google Email

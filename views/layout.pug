@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+      script(src="/javascripts/jquery.js")
+      script(src="/javascripts/vanilla.js")
+      script(src="/javascripts/firebase.js")
+      script(src="/javascripts/firebaseAuth.js")
+      script(src="/javascripts/firebaseSignInWithGoogle.js")
+      script(src="/javascripts/firebaseSignOutWithGoogle.js")
+    
+  body
+    block content
