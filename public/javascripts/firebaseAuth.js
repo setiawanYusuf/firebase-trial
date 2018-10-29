@@ -1,3 +1,5 @@
+//Purpose : Config connection to firebase
+//Params  : null
 var config = {
     apiKey: "AIzaSyDa-5yYAeaeo1OMLKna8KnkbHPd8Nvflu4",
     authDomain: "trialnodejsfirebase.firebaseapp.com",

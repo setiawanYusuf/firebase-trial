@@ -1,3 +1,5 @@
+//Purpose : function sign in with google email, method: pop up
+//Params  : null
 function signInWithGoogle(){
     var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -13,11 +15,9 @@ function signInWithGoogle(){
             var email   = user.email;
             var displayName = user.displayName;
             var profilePicture = user.photoURL;
+            var style = 'block';
 
-            document.getElementById('google-display-name').innerText = displayName;
-            document.getElementById('google-pic').src = profilePicture;
-            document.getElementById('google-email').innerText = email;
-            document.getElementById('sign-out-google').style.display = 'block';
+            setDocument(displayName, profilePicture, email, style);
 
             console.info(data.user);
             console.info(token);
@@ -36,4 +36,14 @@ function signInWithGoogle(){
             console.error(email);
             console.error(credential);
         });
+}
+
+//Purpose : function to show data after login
+//Params  : displayName, profilePicture, email, style
+function setDocument (displayName, profilePicture, email, style) 
+{
+    document.getElementById('google-display-name').innerText = displayName;
+    document.getElementById('google-pic').src = profilePicture;
+    document.getElementById('google-email').innerText = email;
+    document.getElementById('sign-out-google').style.display = style;
 }
