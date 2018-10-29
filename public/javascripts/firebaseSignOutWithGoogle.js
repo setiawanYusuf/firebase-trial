@@ -1,9 +1,22 @@
+//Purpose : function sign out firebase for every method
+//Params  : null
 function signOutWithGoogle() {
     firebase.auth().signOut()
         .then(function () {
+            removeDocument();
             console.log('Signed Out');
         })
         .catch(function (error) {
             console.log(error);
         });
+}
+
+//Purpose : function to remove data that showed in browser after login
+//Params  : null
+function removeDocument ()
+{
+    document.getElementById('google-display-name').innerText = '';
+    document.getElementById('google-pic').src = '';
+    document.getElementById('google-email').innerText = '';
+    document.getElementById('sign-out-google').style.display = 'none';
 }
