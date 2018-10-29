@@ -19,8 +19,8 @@ function signInWithGoogle(){
 
             setDocument(displayName, profilePicture, email, style);
 
-            console.info(data.user);
-            console.info(token);
+            console.info("Data User: " + data.user);
+            console.info("Token: " + token);
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -31,10 +31,10 @@ function signInWithGoogle(){
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
 
-            console.error(errorCode);
-            console.error(errorMessage);
-            console.error(email);
-            console.error(credential);
+            console.error("Error Code: " +errorCode);
+            console.error("Error Message: " +errorMessage);
+            console.error("Error Email: " +email);
+            console.error("Error Credential: " +credential);
         });
 }
 
