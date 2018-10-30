@@ -1,5 +1,5 @@
 node_modules
 .lock
 package-lock.json
-config/trialnodejsfirebase-firebase-adminsdk-0go9w-a081d88059.json
-public/javascripts/firebaseAuth.js
+firebaseAdminSDK.*
+firebaseAuth.*
