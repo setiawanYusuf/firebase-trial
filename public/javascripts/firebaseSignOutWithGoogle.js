@@ -4,6 +4,7 @@ function signOutWithGoogle() {
     firebase.auth().signOut()
         .then(function () {
             removeDocument();
+            removeSessionStorage();
             console.log('Signed Out');
         })
         .catch(function (error) {
@@ -19,4 +20,14 @@ function removeDocument ()
     document.getElementById('google-pic').src = '';
     document.getElementById('google-email').innerText = '';
     document.getElementById('sign-out-google').style.display = 'none';
+}
+
+//Purpose : function to remove session 
+//Params  : null
+function removeSessionStorage() 
+{
+    sessionStorage.removeItem('display_name_firebase');
+    sessionStorage.removeItem('profile_picture_firebase');
+    sessionStorage.removeItem('email_firebase');
+    sessionStorage.removeItem('token_firebase');
 }

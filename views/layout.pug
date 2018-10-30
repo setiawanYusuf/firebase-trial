@@ -3,6 +3,8 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
     block scripts
       script(src="/javascripts/jquery.js")
       script(src="/javascripts/vanilla.js")
@@ -11,5 +13,3 @@ html
       script(src="/javascripts/firebaseInit.js")
       script(src="/javascripts/firebaseSignInWithGoogle.js")
       script(src="/javascripts/firebaseSignOutWithGoogle.js")
-  body
-    block content

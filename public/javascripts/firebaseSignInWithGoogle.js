@@ -18,7 +18,7 @@ function signInWithGoogle(){
             var style = 'block';
 
             setDocument(displayName, profilePicture, email, style);
-            setSessionStorage();
+            setSessionStorage(email, token, displayName, profilePicture);
 
             console.info("Data User: " + data.user);
             console.info("Token: " + token);
@@ -39,19 +39,12 @@ function signInWithGoogle(){
         });
 }
 
-//Purpose : function to show data after login
-//Params  : displayName, profilePicture, email, style
-function setDocument (displayName, profilePicture, email, style) 
+//Purpose ; function store session
+//Params  : email, token
+function setSessionStorage(email, token, displayName, profilePicture)
 {
-    document.getElementById('google-display-name').innerText = displayName;
-    document.getElementById('google-pic').src = profilePicture;
-    document.getElementById('google-email').innerText = email;
-    document.getElementById('sign-out-google').style.display = style;
-}
-
-
-function setSessionStorage()
-{
-    var someTempData = 'The data that I want to store temporarily.';
-    sessionStorage.setItem('myTempDataKey', someTempData);
+    sessionStorage.setItem('display_name_firebase', displayName);
+    sessionStorage.setItem('profile_picture_firebase', profilePicture);
+    sessionStorage.setItem('email_firebase', email);
+    sessionStorage.setItem('token_firebase', token);
 }
