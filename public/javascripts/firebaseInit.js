@@ -1,1 +1,1 @@
-console.info(config);
+firebase.initializeApp(config);
