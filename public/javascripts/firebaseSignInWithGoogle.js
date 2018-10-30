@@ -1,3 +1,5 @@
+//Purpose : function sign in with google email, method: pop up
+//Params  : null
 function signInWithGoogle(){
     var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -13,14 +15,13 @@ function signInWithGoogle(){
             var email   = user.email;
             var displayName = user.displayName;
             var profilePicture = user.photoURL;
+            var style = 'block';
 
-            document.getElementById('google-display-name').innerText = displayName;
-            document.getElementById('google-pic').src = profilePicture;
-            document.getElementById('google-email').innerText = email;
-            document.getElementById('sign-out-google').style.display = 'block';
+            setDocument(displayName, profilePicture, email, style);
+            setSessionStorage();
 
-            console.info(data.user);
-            console.info(this);
+            console.info("Data User: " + data.user);
+            console.info("Token: " + token);
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -31,9 +32,26 @@ function signInWithGoogle(){
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
 
-            console.error(errorCode);
-            console.error(errorMessage);
-            console.error(email);
-            console.error(credential);
+            console.error("Error Code: " +errorCode);
+            console.error("Error Message: " +errorMessage);
+            console.error("Error Email: " +email);
+            console.error("Error Credential: " +credential);
         });
+}
+
+//Purpose : function to show data after login
+//Params  : displayName, profilePicture, email, style
+function setDocument (displayName, profilePicture, email, style) 
+{
+    document.getElementById('google-display-name').innerText = displayName;
+    document.getElementById('google-pic').src = profilePicture;
+    document.getElementById('google-email').innerText = email;
+    document.getElementById('sign-out-google').style.display = style;
+}
+
+
+function setSessionStorage()
+{
+    var someTempData = 'The data that I want to store temporarily.';
+    sessionStorage.setItem('myTempDataKey', someTempData);
 }
