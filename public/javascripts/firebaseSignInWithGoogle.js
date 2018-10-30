@@ -20,7 +20,7 @@ function signInWithGoogle(){
             document.getElementById('sign-out-google').style.display = 'block';
 
             console.info(data.user);
-            console.info(token);
+            console.info(this);
         })
         .catch(function (error) {
             // Handle Errors here.
