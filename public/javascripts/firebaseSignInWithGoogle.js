@@ -18,6 +18,7 @@ function signInWithGoogle(){
             var style = 'block';
 
             setDocument(displayName, profilePicture, email, style);
+            setSessionStorage();
 
             console.info("Data User: " + data.user);
             console.info("Token: " + token);
@@ -46,4 +47,11 @@ function setDocument (displayName, profilePicture, email, style)
     document.getElementById('google-pic').src = profilePicture;
     document.getElementById('google-email').innerText = email;
     document.getElementById('sign-out-google').style.display = style;
+}
+
+
+function setSessionStorage()
+{
+    var someTempData = 'The data that I want to store temporarily.';
+    sessionStorage.setItem('myTempDataKey', someTempData);
 }
