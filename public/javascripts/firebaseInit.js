@@ -2,6 +2,8 @@ firebase.initializeApp(config);
 
 checkSessionStorage();
 
+//Purpose : check if sessionStorage is not empty
+//Params  : null
 function checkSessionStorage()
 {
     var email_firebase = sessionStorage.getItem('email_firebase');
