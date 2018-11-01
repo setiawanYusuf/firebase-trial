@@ -2,7 +2,7 @@ firebase.initializeApp(config);
 
 checkSessionStorage();
 
-//Purpose : check if sessionStorage is not empty
+//Purpose : check if sessionStorage is not empty or if login == true
 //Params  : null
 function checkSessionStorage()
 {
@@ -13,6 +13,15 @@ function checkSessionStorage()
 
     if ((email_firebase !== null) && (token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) ) {
         setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
+    } else {
+        var currentUrl = window.location.href;
+        switch (currentUrl) {
+            case 'http://localhost:5000/':
+                break;
+            default:
+                window.location.replace("/");
+                break;
+        }
     }
 }
 
