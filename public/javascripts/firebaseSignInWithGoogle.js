@@ -15,13 +15,14 @@ function signInWithGoogle(){
             var email   = user.email;
             var displayName = user.displayName;
             var profilePicture = user.photoURL;
+            var userUid = user.uid;
             var style = 'block';
 
             setDocument(displayName, profilePicture, email, style);
-            setSessionStorage(email, token, displayName, profilePicture);
+            setSessionStorage(email, token, displayName, profilePicture, userUid);
 
-            console.info("Data User: " + data.user);
-            console.info("Token: " + token);
+            console.info("Data User: " + user.uid);
+            //console.info("Token: " + token);
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -41,10 +42,11 @@ function signInWithGoogle(){
 
 //Purpose ; function store session
 //Params  : email, token
-function setSessionStorage(email, token, displayName, profilePicture)
+function setSessionStorage(email, token, displayName, profilePicture, userUid)
 {
     sessionStorage.setItem('display_name_firebase', displayName);
     sessionStorage.setItem('profile_picture_firebase', profilePicture);
     sessionStorage.setItem('email_firebase', email);
     sessionStorage.setItem('token_firebase', token);
+    sessionStorage.setItem('uid_firebase', userUid);
 }

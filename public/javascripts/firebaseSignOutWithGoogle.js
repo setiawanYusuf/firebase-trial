@@ -30,4 +30,5 @@ function removeSessionStorage()
     sessionStorage.removeItem('profile_picture_firebase');
     sessionStorage.removeItem('email_firebase');
     sessionStorage.removeItem('token_firebase');
+    sessionStorage.removeItem('uid_firebase');
 }

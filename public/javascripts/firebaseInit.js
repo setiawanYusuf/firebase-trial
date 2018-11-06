@@ -10,19 +10,28 @@ function checkSessionStorage()
     var token_firebase = sessionStorage.getItem('token_firebase');
     var display_name_firebase = sessionStorage.getItem('email_firebase');
     var profile_picture_firebase = sessionStorage.getItem('profile_picture_firebase');
+    var uid_firebase = sessionStorage.getItem('uid_firebase');
 
-    if ((email_firebase !== null) && (token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) ) {
-        setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
-    } else {
-        var currentUrl = window.location.href;
-        switch (currentUrl.length) {
-            case 22:
-                break;
-            default:
-                window.location.replace("/");
-                break;
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            if (user.uid == uid_firebase) {
+                console.log("Someone is signed in. (Exception from UID) " + user.uid);
+                if ((email_firebase !== null) && (token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) && (uid_firebase !== null)) {
+                    setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
+                } 
+            }
+        } else {
+            console.log("Noone is signed in.");
+            var currentUrl = window.location.href;
+            switch (currentUrl.length) {
+                case 22:
+                    break;
+                default:
+                    window.location.replace("/");
+                    break;
+            }
         }
-    }
+    });
 }
 
 //Purpose : function to show data after login
