@@ -5,7 +5,7 @@ function signOutWithGoogle() {
         .then(function () {
             removeDocument();
             removeSessionStorage();
-            console.log('Signed Out');
+            window.location.replace("/");
         })
         .catch(function (error) {
             console.log(error);

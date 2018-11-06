@@ -15,8 +15,8 @@ function checkSessionStorage()
         setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
     } else {
         var currentUrl = window.location.href;
-        switch (currentUrl) {
-            case 'http://localhost:5000/':
+        switch (currentUrl.length) {
+            case 22:
                 break;
             default:
                 window.location.replace("/");

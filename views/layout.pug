@@ -2,12 +2,15 @@ doctype html
 html
   head
     title= title
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
     block scripts
       script(src="/javascripts/jquery.js")
       script(src="/javascripts/vanilla.js")
+      script(src="/javascripts/bootstrap.min.js")
       script(src="/javascripts/firebase.js")
       script(src="/javascripts/firebaseAuth.js")
       script(src="/javascripts/firebaseInit.js")
