@@ -14,17 +14,21 @@ html,body{
 }
 
 .card{
-    height: 370px;
+    /*height: 370px;*/
+    height: 16vh;
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
 }
 
-.social_icon span{
-    font-size: 60px;
-    /*margin-left: 10px;*/
+.social_icon span {
+    font-size: 60px;    
     color: #FFC312;
+}
+
+.social_icon span:not(:first-child){
+    margin-left: 10px;
 }
 
 .social_icon span:hover{
@@ -37,8 +41,8 @@ html,body{
 }
 
 .social_icon{
-    position: absolute;
-    /*right: 20px;
+    /*position: absolute;
+    right: 20px;
     top: -45px;*/
 }
 
