@@ -23,7 +23,7 @@ html,body{
 
 .social_icon span{
     font-size: 60px;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     color: #FFC312;
 }
 
@@ -38,8 +38,8 @@ html,body{
 
 .social_icon{
     position: absolute;
-    right: 20px;
-    top: -45px;
+    /*right: 20px;
+    top: -45px;*/
 }
 
 .input-group-prepend span{
