@@ -5,16 +5,16 @@ block content
     .d-flex.justify-content-center.h-100
       .card
         .card-header
-          h3.justify-content-center Sign In
+          h3.justify-content-center= title
           .d-flex.justify-content-center.social_icon
             span
               i.fab.fa-facebook-square
-            span
-              i.fab.fa-google-plus-square
+            span(onclick= "signInWithGoogle()")
+              i.fab.fa-google
             span
               i.fab.fa-twitter-square
-        .card-body
-          //form
+        //.card-body
+          form
             .input-group.form-group
               .input-group-prepend
                 span.input-group-text
@@ -30,10 +30,10 @@ block content
               | Remember Me
             .form-group
               input.btn.float-right.login_btn(type='submit', value='Login')
-        .card-footer
-          //.d-flex.justify-content-center.links
+        //.card-footer
+          .d-flex.justify-content-center.links
             | Don't have an account?
             a(href='#') Sign Up
-          //.d-flex.justify-content-center
+          .d-flex.justify-content-center
             a(href='#') Forgot your password?
 

@@ -15,7 +15,6 @@ function checkSessionStorage()
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             if (user.uid == uid_firebase) {
-                console.log("Someone is signed in. (Exception from UID) " + user.uid);
                 if ((email_firebase !== null) && (token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) && (uid_firebase !== null)) {
                     setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
                 } 

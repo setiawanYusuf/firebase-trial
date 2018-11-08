@@ -1,6 +1,7 @@
 //Purpose : function sign out firebase for every method
 //Params  : null
-function signOutWithGoogle() {
+function signOutWithGoogle() 
+{
     firebase.auth().signOut()
         .then(function () {
             removeDocument();

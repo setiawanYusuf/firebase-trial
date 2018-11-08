@@ -1,6 +1,7 @@
 //Purpose : function sign in with google email, method: pop up
 //Params  : null
-function signInWithGoogle(){
+function signInWithGoogle()
+{
     var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
     googleAuthProvider.addScope('email');
@@ -18,8 +19,9 @@ function signInWithGoogle(){
             var userUid = user.uid;
             var style = 'block';
 
-            setDocument(displayName, profilePicture, email, style);
+            //setDocument(displayName, profilePicture, email, style);
             setSessionStorage(email, token, displayName, profilePicture, userUid);
+            window.location.replace("/dashboard");
 
             console.info("Data User: " + user.uid);
             //console.info("Token: " + token);
