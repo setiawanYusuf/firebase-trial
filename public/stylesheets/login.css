@@ -15,11 +15,14 @@ html,body{
 
 .card{
     /*height: 370px;*/
-    height: 16vh;
+    height: 20vh;
     margin-top: auto;
     margin-bottom: auto;
-    width: 400px;
+    /*width: 400px;*/
+    width: 35vw;
     background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .social_icon span {
@@ -28,7 +31,7 @@ html,body{
 }
 
 .social_icon span:not(:first-child){
-    margin-left: 10px;
+    margin-left: 2vw;
 }
 
 .social_icon span:hover{
@@ -91,4 +94,4 @@ input:focus{
 
 .links a{
     margin-left: 4px;
-}
+}   
