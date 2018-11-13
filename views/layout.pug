@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang='en')
   head
     title= title
     
@@ -10,8 +10,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/signIn.css')
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
-  body
-    block content
+
     block scripts
       script(src="/javascripts/jquery.js")
       script(src="/javascripts/vanilla.js")
@@ -21,3 +20,5 @@ html
       script(src="/javascripts/firebaseInit.js")
       script(src="/javascripts/withGoogle/firebaseSignInWithGoogle.js")
       script(src="/javascripts/withGoogle/firebaseSignOutWithGoogle.js")
+  body
+    block content

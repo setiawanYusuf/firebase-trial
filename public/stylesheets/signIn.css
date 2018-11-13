@@ -20,14 +20,14 @@ html > body > .login{
 }
 
 /* CARD */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 4000px) {
     .login .card{
-        margin: 12vw auto;
-        width: 45vw;
+        margin: 0 auto;
+        width: 50%;
         background-color: rgba(0,0,0,0.5) !important;
         border-radius: 20px;
         text-align: center;
-    }    
+    }
 
     /* CARD HEADER */
     .login .card-header{
@@ -40,17 +40,13 @@ html > body > .login{
     }
 
     /* CARD BODY */
-    .login .d-flex{
-        display: block !important;
-    }
-
-    .login .social_icon span{
-        font-size: 30vw;    
+    .login .social_icon span {
+        font-size: 9vw;    
         color: #FFC312;
     }
 
     .login .social_icon span:not(:first-child){
-        margin-left: 0vw;
+        margin-left: 2vw;
     }
 
     .login .social_icon span:hover{
@@ -61,7 +57,7 @@ html > body > .login{
 
 @media only screen and (max-width: 425px) {
     .login .card{
-        margin: 8vw auto;
+        margin: 12vw auto;
         width: 35vw;
         background-color: rgba(0,0,0,0.5) !important;
         border-radius: 20px;
@@ -98,14 +94,14 @@ html > body > .login{
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 425px) {
     .login .card{
-        margin: 0 auto;
-        width: 50%;
+        margin: 12vw auto;
+        width: 35vw;
         background-color: rgba(0,0,0,0.5) !important;
         border-radius: 20px;
         text-align: center;
-    }
+    }    
 
     /* CARD HEADER */
     .login .card-header{
@@ -118,13 +114,56 @@ html > body > .login{
     }
 
     /* CARD BODY */
-    .login .social_icon span {
-        font-size: 9vw;    
+    .login .d-flex{
+        display: block !important;
+    }
+
+    .login .social_icon span{
+        font-size: 22vw;    
         color: #FFC312;
     }
 
     .login .social_icon span:not(:first-child){
-        margin-left: 2vw;
+        margin-left: 0vw;
+    }
+
+    .login .social_icon span:hover{
+        color: white;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .login .card{
+        margin: 12vw auto;
+        width: 45vw;
+        background-color: rgba(0,0,0,0.5) !important;
+        border-radius: 20px;
+        text-align: center;
+    }    
+
+    /* CARD HEADER */
+    .login .card-header{
+        border: none !important;
+        margin-top: 1rem;
+    }
+
+    .login .card-header h3{
+        color: white;
+    }
+
+    /* CARD BODY */
+    .login .d-flex{
+        display: block !important;
+    }
+
+    .login .social_icon span{
+        font-size: 30vw;    
+        color: #FFC312;
+    }
+
+    .login .social_icon span:not(:first-child){
+        margin-left: 0vw;
     }
 
     .login .social_icon span:hover{
