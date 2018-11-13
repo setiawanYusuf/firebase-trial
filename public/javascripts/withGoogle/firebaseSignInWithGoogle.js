@@ -22,9 +22,6 @@ function signInWithGoogle()
             //setDocument(displayName, profilePicture, email, style);
             setSessionStorage(email, token, displayName, profilePicture, userUid);
             window.location.replace("/dashboard");
-
-            console.info("Data User: " + user.uid);
-            //console.info("Token: " + token);
         })
         .catch(function (error) {
             // Handle Errors here.

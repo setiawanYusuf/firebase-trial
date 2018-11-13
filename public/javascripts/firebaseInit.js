@@ -1,5 +1,4 @@
-
-document.addEventListener("DOMContentLoaded", function (e) {    
+document.addEventListener("DOMContentLoaded", function (e) {
     firebase.initializeApp(config);
     checkSessionStorage();
 });
