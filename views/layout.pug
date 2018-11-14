@@ -9,8 +9,12 @@ html(lang='en')
     link(rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/signIn.css')
+    link(rel='stylesheet', href='/stylesheets/partials/signIn/header.css')
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+    link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cookie' type='text/css')
 
+  body
+    block content
     block scripts
       script(src="/javascripts/jquery.js")
       script(src="/javascripts/vanilla.js")
@@ -20,5 +24,3 @@ html(lang='en')
       script(src="/javascripts/firebaseInit.js")
       script(src="/javascripts/withGoogle/firebaseSignInWithGoogle.js")
       script(src="/javascripts/withGoogle/firebaseSignOutWithGoogle.js")
-  body
-    block content

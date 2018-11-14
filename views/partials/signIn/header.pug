@@ -1,5 +1,20 @@
+//-
+    h1= title
+    h3#google-display-name
+    img(style="display:none;")#google-pic
+    p#google-email
 
-h1= title
-h3#google-display-name
-img(style="display:none;")#google-pic
-p#google-email
+header.header-user-dropdown
+  .header-limiter
+    h1
+        a#google-display-name(href='#')
+        | 
+        span#google-email
+    .header-user-menu
+      img#google-pic(alt='User Image')
+      ul
+        li
+          a(href='#') Settings
+        li
+          a.highlight#sign-out-google(href='#' onclick= "signOutWithGoogle()") Logout
+

@@ -9,7 +9,7 @@ function checkSessionStorage()
 {
     var email_firebase = sessionStorage.getItem('email_firebase');
     var token_firebase = sessionStorage.getItem('token_firebase');
-    var display_name_firebase = sessionStorage.getItem('email_firebase');
+    var display_name_firebase = sessionStorage.getItem('display_name_firebase');
     var profile_picture_firebase = sessionStorage.getItem('profile_picture_firebase');
     var uid_firebase = sessionStorage.getItem('uid_firebase');
 
@@ -43,6 +43,6 @@ function setDocument(displayName, profilePicture, email, style)
 
     document.getElementById('google-display-name').innerText = displayName;
     document.getElementById('google-pic').src = profilePicture;
-    document.getElementById('google-email').innerText = email;
+    document.getElementById('google-email').innerHTML = email;
     document.getElementById('sign-out-google').style.display = style;
 }
