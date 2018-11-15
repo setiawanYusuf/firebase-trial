@@ -1,11 +1,14 @@
 //Template login page : 'https://bootsnipp.com/snippets/vl4R7'
 //https://www.bootstrapdash.com/bootstrap-4-admin-templates/
 
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 
 var signInRouter = require('./routes/signIn');
 var dashBoardRouter = require('./routes/dashBoard');
