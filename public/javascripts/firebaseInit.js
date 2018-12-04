@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 function checkSessionStorage()
 {
     var email_firebase = sessionStorage.getItem('email_firebase');
-    var token_firebase = sessionStorage.getItem('token_firebase');
+    var access_token_firebase = sessionStorage.getItem('access_token_firebase');
+    var id_token_firebase = sessionStorage.getItem('id_token_firebase');
     var display_name_firebase = sessionStorage.getItem('display_name_firebase');
     var profile_picture_firebase = sessionStorage.getItem('profile_picture_firebase');
     var uid_firebase = sessionStorage.getItem('uid_firebase');
@@ -16,8 +17,8 @@ function checkSessionStorage()
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             if (user.uid == uid_firebase) {
-                if ((email_firebase !== null) && (token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) && (uid_firebase !== null)) {
-                    console.info('setDocument called.');
+                if ((email_firebase !== null) && (access_token_firebase !== null) && (id_token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) && (uid_firebase !== null)) {
+                    console.info(user);
                     setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
                 } 
             }

@@ -11,7 +11,8 @@ function signInWithGoogle()
 
     firebase.auth().signInWithPopup(googleAuthProvider)
         .then(function (data) {
-            var token = data.credential.accessToken;
+            var accessToken = data.credential.accessToken;
+            var idToken = data.credential.idToken;
             var user = data.user;
             var email   = user.email;
             var displayName = user.displayName;
@@ -20,8 +21,8 @@ function signInWithGoogle()
             var style = 'block';
 
             //setDocument(displayName, profilePicture, email, style);
-            setSessionStorage(email, token, displayName, profilePicture, userUid);
-            window.location.replace("/dashboard");
+            setSessionStorage(email, accessToken, idToken, displayName, profilePicture, userUid);
+            window.location.replace("/dashboard-client");
         })
         .catch(function (error) {
             // Handle Errors here.
@@ -41,11 +42,12 @@ function signInWithGoogle()
 
 //Purpose ; function store session
 //Params  : email, token
-function setSessionStorage(email, token, displayName, profilePicture, userUid)
+function setSessionStorage(email, accessToken, idToken, displayName, profilePicture, userUid)
 {
     sessionStorage.setItem('display_name_firebase', displayName);
     sessionStorage.setItem('profile_picture_firebase', profilePicture);
     sessionStorage.setItem('email_firebase', email);
-    sessionStorage.setItem('token_firebase', token);
+    sessionStorage.setItem('access_token_firebase', accessToken);
+    sessionStorage.setItem('id_token_firebase', idToken);
     sessionStorage.setItem('uid_firebase', userUid);
 }
