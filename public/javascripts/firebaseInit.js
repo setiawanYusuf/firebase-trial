@@ -1,7 +1,12 @@
-document.addEventListener("DOMContentLoaded", function (e) {
+/* document.addEventListener("DOMContentLoaded", function (e) {
     firebase.initializeApp(config);
     checkSessionStorage();
-});
+}); */
+
+window.onload = function(){
+    firebase.initializeApp(config);
+    checkSessionStorage();
+};
 
 //Purpose : check if sessionStorage is not empty or if login == true
 //Params  : null
@@ -18,7 +23,6 @@ function checkSessionStorage()
         if (user) {
             if (user.uid == uid_firebase) {
                 if ((email_firebase !== null) && (access_token_firebase !== null) && (id_token_firebase !== null) && (display_name_firebase !== null) && (profile_picture_firebase !== null) && (uid_firebase !== null)) {
-                    console.info(user);
                     setDocument(display_name_firebase, profile_picture_firebase, email_firebase, 'block');
                 } 
             }
@@ -40,7 +44,7 @@ function checkSessionStorage()
 //Params  : displayName, profilePicture, email, style
 function setDocument(displayName, profilePicture, email, style) 
 {
-    console.info(displayName + ' # ' + profilePicture + ' # ' + email + ' # ' + style);
+    //console.info(displayName + ' # ' + profilePicture + ' # ' + email + ' # ' + style);
 
     document.getElementById('google-display-name').innerText = displayName;
     document.getElementById('google-pic').src = profilePicture;

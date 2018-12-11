@@ -1,0 +1,9 @@
+div.row.container-add-restaurant
+    .col-12
+        form
+        div.form-group.row.add-restaurant
+            label.col-sm-2.col-form-label.float-left(for="restaurant") Restaurant:
+            .col-sm-10
+                input.form-control#add-restaurant(type="text" placeholder="Enter Restaurant")
+            label.col-sm-12.col-form-label.float-left#label-notification(for="notification")
+            button.btn.btn-primary.mb-2.btn-submit-add-restaurant(onclick="{addRestaurant()}") Submit

@@ -111,6 +111,7 @@
 .header-user-dropdown .header-user-menu:hover ul,
 .header-user-dropdown .header-user-menu.show ul{
 	display:block;
+	z-index: 9999999999999999999999999;
 }
 
 .header-user-dropdown .header-user-menu ul li{

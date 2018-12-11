@@ -8,18 +8,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var admin = require('firebase-admin');
 
 var signInRouter = require('./routes/signIn');
 var dashboardClientRouter = require('./routes/dashboardClient');
 var dashboardServerRouter = require('./routes/dashboardServer');
 var usersRouter = require('./routes/users');
-var serviceAccount = require('./public/javascripts/trialnodejsfirebase-firebase-adminsdk-0go9w-f6beefd64e.json');
 
-var firebaseAdmin = admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://trialnodejsfirebase.firebaseio.com"
-});
 
 var app = express();
 

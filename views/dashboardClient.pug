@@ -4,6 +4,27 @@ block content
   .dashboard
     .container.container-fluid
       include ./partials/signIn/header.pug
+      include ./partials/formAddRestaurant/formAdd.pug
+      .row.container-card-restaurant
+        if(restaurants)
+          each restaurant, index in restaurants
+
+            if (restaurant.votes)
+              - var votes = Object.keys(restaurant.votes);
+              - var votes = votes.length;
+            else 
+              - var votes = 0
+            - var index = index;
+
+            .col-3.card-restaurant(style="margin-bottom:10px")
+              .card
+                .card-body
+                  .card-title #{restaurant.name}
+                  p.card-text Votes: #{votes}
+                  a.btn.btn-primary(href="#" style="margin-right:10px" onclick="{upVote('"+index+"')}") Upvote 
+                    i.fas.fa-angle-up(style="margin-left:5px;")
+                  a.btn.btn-primary(href="#" onclick="{downVote('"+index+"')}") Downvote
+                    i.fas.fa-angle-down(style="margin-left:5px;")
     //-
       .d-flex.justify-content-center.h-100.row
         .col-12
